@@ -1,0 +1,11 @@
+theia@theiadocker-flnolte:/home/project/xrwvm-fullstack_developer_capstone/server/database$ curl -X GET "https://flnolte-3030.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/kansasDealers"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /kansasDealers</pre>
+</body>
+</html>
