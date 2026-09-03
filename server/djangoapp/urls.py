@@ -11,6 +11,8 @@ urlpatterns = [
     # path for login
     path(route='login', view=views.login_user, name='login'),
 
+    # path for cars
+    path('get_cars', views.get_cars, name='getcars'),
 
     # path for dealer reviews view
 
