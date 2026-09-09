@@ -37,7 +37,10 @@ def login_user(request):
     if user is not None:
         # If user is valid, call login method to login current user
         login(request, user)
-        data = {"userName": username, "status": "Authenticated"}
+        data = {"userName": username, 
+                "firstName": user.first_name,
+                "lastName": user.last_name,
+                "status": "Authenticated"}
     return JsonResponse(data)
 
 # Create a `logout_request` view to handle sign out request
