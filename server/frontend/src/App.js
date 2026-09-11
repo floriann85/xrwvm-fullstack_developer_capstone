@@ -5,7 +5,7 @@ import Dealers from './components/Dealers/Dealers';
 
 function App() {
   return (
-    <Routes>
+    <Routes>      
       <Route path="/login" element={<LoginPanel />} />
       <Route path="/register" element={<Register />} />
       <Route path="/dealers" element={<Dealers/>} />

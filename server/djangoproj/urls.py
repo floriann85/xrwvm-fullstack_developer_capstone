@@ -25,8 +25,8 @@ urlpatterns = [
     # Django API
     path('djangoapp/', include('djangoapp.urls')),
 
-    # React SPA
-    path('', TemplateView.as_view(template_name="index.html")),
+    # React SPA    
+    path('', TemplateView.as_view(template_name="Home.html")),
     path('login/', TemplateView.as_view(template_name="index.html")),
     path('dealers/', TemplateView.as_view(template_name="index.html")),
     path('about/', TemplateView.as_view(template_name="index.html")),
