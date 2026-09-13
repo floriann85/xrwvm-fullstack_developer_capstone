@@ -45,7 +45,11 @@ def login_user(request):
 
 # Create a `logout_request` view to handle sign out request
 # def logout_request(request):
-# ...
+from django.contrib.auth import logout
+
+def logout_request(request):
+    logout(request)
+    return JsonResponse({"userName": ""})
 
 # Create a `registration` view to handle sign up request
 # @csrf_exempt
