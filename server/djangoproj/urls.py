@@ -1,4 +1,5 @@
-"""djangoproj URL Configuration
+"""
+djangoproj URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -13,16 +14,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from django.conf import settings
-from django.urls import re_path
 from django.http import HttpResponse
+
 
 def manifest(request):
     return HttpResponse("{}", content_type="application/json")
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,13 +36,19 @@ urlpatterns = [
     # manifest.json separate handling
     path('manifest.json', manifest),
 
-    # React SPA    
+    # React SPA
     path('', TemplateView.as_view(template_name="Home.html")),
     path('register/', TemplateView.as_view(template_name="index.html")),
-    path('login/', TemplateView.as_view(template_name="index.html")),    
+    path('login/', TemplateView.as_view(template_name="index.html")),
     path('dealers/', TemplateView.as_view(template_name="index.html")),
-    path('dealer/<int:dealer_id>/',TemplateView.as_view(template_name="index.html")),    
-    path('postreview/<int:dealer_id>/',TemplateView.as_view(template_name="index.html")),
+    path(
+        'dealer/<int:dealer_id>/',
+        TemplateView.as_view(template_name="index.html")
+    ),
+    path(
+        'postreview/<int:dealer_id>/',
+        TemplateView.as_view(template_name="index.html")
+    ),
     path('about/', TemplateView.as_view(template_name="About.html")),
     path('contact/', TemplateView.as_view(template_name="Contact.html")),
 
