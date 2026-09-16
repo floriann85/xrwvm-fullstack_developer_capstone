@@ -11,6 +11,8 @@ import datetime
 # - Description
 # - Any other fields you would like to include in car make model
 # - __str__ method to print a car make object
+
+
 class CarMake(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
@@ -21,13 +23,15 @@ class CarMake(models.Model):
 
 # <HINT> Create a Car Model model `class CarModel(models.Model):`:
 # - Many-To-One relationship to Car Make model (One Car Make has many
-# Car Models, using ForeignKey field)
+#   Car Models, using ForeignKey field)
 # - Name
 # - Type (CharField with a choices argument to provide limited choices
-# such as Sedan, SUV, WAGON, etc.)
+#   such as Sedan, SUV, WAGON, etc.)
 # - Year (IntegerField) with min value 2015 and max value 2023
 # - Any other fields you would like to include in car model
 # - __str__ method to print a car make object
+
+
 class CarModel(models.Model):
     # Many-to-one relationship
     car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
@@ -43,7 +47,11 @@ class CarModel(models.Model):
         ('COUPE', 'Coupe'),
     ]
 
-    type = models.CharField(max_length=20, choices=CAR_TYPES, default='SUV')
+    type = models.CharField(
+        max_length=20,
+        choices=CAR_TYPES,
+        default='SUV',
+    )
 
     # Dealer ID (Cloudant dealer)
     dealer_id = models.IntegerField()
@@ -52,7 +60,7 @@ class CarModel(models.Model):
     year = models.IntegerField(
         validators=[
             MinValueValidator(1900),
-            MaxValueValidator(datetime.datetime.now().year)
+            MaxValueValidator(now().year),
         ]
     )
 
