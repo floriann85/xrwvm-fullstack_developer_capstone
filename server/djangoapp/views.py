@@ -2,22 +2,15 @@
 
 import json
 import logging
-from datetime import datetime
 
-from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.csrf import csrf_exempt
 
-from .models import CarMake, CarModel
+from .models import CarModel
 from .populate import initiate
-from .restapis import (
-    get_request,
-    analyze_review_sentiments,
-    post_review,
-)
+from .restapis import get_request, post_review
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
