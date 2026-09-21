@@ -2,11 +2,18 @@
 
 This project is created to apply knowledge of relevant and in-demand skills such as:  
 •	Designing applications and their architecture
+
 •	Creating web frontends with static and dynamic pages using HTML, 
   CSS, JavaScript and REACT
+  
 •	Implementing user management and authentication  
+
 •	Developing backend services and communicating with databases
+
 •	Continuously Integrating and Deploying changes using CI/CD pipelines  
+
 •	Deploying serverless applications on Code Engine
+
 •	Creating and invoking RESTful microservices
+
 •	Deploying the entire solution on Cloud using Kubernetes 
